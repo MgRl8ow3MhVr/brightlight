@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "spacemono";
+  src: url("../../ressources/font/SpaceMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Moonbright";
+  src: url("../../ressources/font/Moonbright.ttf");
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* # # # # # # # # # #  Pour la section menu */
+.header {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #faf9f5;
+}
+
+.headerLeft {
+  /* font-family: "spacemono"; */
+  font-family: "VT323", monospace;
+  font-size: 2em;
+  justify-content: flex-start;
+}
+
+.headerRight {
+  display: flex;
+  justify-content: space-between;
+  font-family: spacemono;
+  width: 30%;
+  min-width: 200px;
+  align-items: center;
+}
+
+/* # # # # # # # # # #  Pour la section image principale */
+
+.Hero {
+  background-image: url("../../ressources/images/img1.jpg");
+
+  background-position: center center;
+  background-size: cover;
+  min-width: 100px;
+  min-height: 300px;
+  /* position: static; */
+  top: 0;
+  width: 100%;
+  height: 50%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Hero-text {
+  font-size: 5em;
+  color: white;
+  font-family: moonbright;
+}
+
+/* # # # # # # # # # #  Collections */
+
+/* tout le bloc */
+.collections {
+  display: flex;
+  overflow-x: auto;
+  justify-content: flex-start;
+}
+.collections::-webkit-scrollbar {
+  display: none;
+}
+/* un sous bloc personne */
+
+.collection_item {
+  min-width: 300px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: scroll;
+
+  border-style: solid;
+  border-width: 1px;
+  margin: 10px;
+}
+
+/* div qui cadre la photo */
+.photocollection {
+  width: 100%;
+  height: 350px;
+  overflow-y: hidden;
+}
+
+h2 {
+  font-family: arial;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 5px;
+}
+
+/* # # # # # # # # # #  sunglasses */
+
+.sunglasses {
+  background-color: #ffcc33;
+  display: flex;
+  padding: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.block-sunglasses {
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.menu-sunglass {
+  display: flex;
+  padding: 30px;
+  justify-content: space-around;
+  align-items: center;
+}

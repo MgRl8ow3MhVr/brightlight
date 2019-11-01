@@ -91,6 +91,18 @@ const move = () => {
 var navlink = document.querySelector("nav ul");
 navlink.addEventListener("click", move);
 
+// # # # # # # # # # # # CRAZY TURNAROUND
+
+const crazyturn = () => {
+  console.log("HELLO");
+  var boddy = document.querySelector("body");
+
+  boddy.style.transform = `rotate(360deg)`;
+};
+
+var clickme = document.querySelector(".clickme");
+clickme.addEventListener("click", crazyturn);
+
 // # # # # # # # # # # # CRAZY SCROLL
 
 const scrollme = () => {

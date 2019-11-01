@@ -34,7 +34,6 @@ function shaketranslation(element, num) {
   xtrans = xtrans / num;
   element.style.transform = `translate(0px,${xtrans}px)`;
   if (xtrans < -6.95 / num) {
-    console.log("coucou");
     element.style.transform = `translate(0px,${xtrans}px) scale(2)`;
   }
 }
@@ -66,7 +65,49 @@ carts.forEach(cart => {
 var windowSize = document.querySelector("#windowSize");
 var idwindowSize = setInterval(shakeit, 200, windowSize, 40);
 
-// # # # # # # # # NightShift
+// # # # # # # # # CRAZY LINK
+const sleep = milliseconds => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+};
+
+const move = () => {
+  clearInterval(crazyscroll);
+
+  console.log("hello");
+  window.scroll({
+    top: 5000, // could be negative value
+    left: 0
+  });
+  sleep(1000).then(() => {
+    console.log("helloici");
+    window.scroll({
+      top: -5000, // could be negative value
+      left: 0
+      // behavior: "smooth"
+    });
+  });
+};
+
+var navlink = document.querySelector("nav ul");
+navlink.addEventListener("click", move);
+
+// # # # # # # # # # # # CRAZY SCROLL
+
+const scrollme = () => {
+  let scroll = Math.random() * 10 - 5;
+  if (scroll > 4.6) {
+    console.log("coucou");
+    scroll = Math.random() * 7000 - 3000;
+  }
+  window.scrollBy({
+    top: scroll, // could be negative value
+    left: 0
+  });
+};
+
+let crazyscroll = setInterval(scrollme, 200);
+
+// # # # # # # # # # NightShift
 
 const hero = document.querySelector(".hero");
 const nightButton = document.querySelector(".svgel");

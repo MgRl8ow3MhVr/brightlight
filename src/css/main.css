@@ -17,6 +17,10 @@
 }
 /* -----------  GLOBAL RULE ---------- # # # # # # # # # # # # # # # # # # # #*/
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --black: #000;
   --grey: #faf9f5;

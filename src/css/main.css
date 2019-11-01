@@ -62,12 +62,25 @@ header {
   padding: 0.5rem 0.5rem;
   overflow: scroll;
   width: 100vw;
-  /* position: fixed; */
+  border-style: solid;
+  border-width: 2px;
 }
 
 .clickme {
   background-color: red;
   font-size: 1rem;
+  z-index: 999;
+  font-family: spacemono;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 3px;
+  padding: 5px;
+}
+
+.havemercy {
+  background-color: red;
+  font-size: 0.7rem;
+  text-align: center;
   z-index: 999;
   font-family: spacemono;
   border-radius: 10%;

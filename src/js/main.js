@@ -71,8 +71,6 @@ const sleep = milliseconds => {
 };
 
 const move = () => {
-  clearInterval(crazyscroll);
-
   console.log("hello");
   window.scroll({
     top: 5000, // could be negative value
@@ -103,21 +101,32 @@ const crazyturn = () => {
 var clickme = document.querySelector(".clickme");
 clickme.addEventListener("click", crazyturn);
 
+// # # # # # # # # # # # HAVE MERCY
+
+const havemercyfunc = () => {
+  console.log("HERE");
+  clearInterval(crazyscroll);
+};
+
+var havemercy = document.querySelector(".havemercy");
+havemercy.addEventListener("click", havemercyfunc);
+
 // # # # # # # # # # # # CRAZY SCROLL
 
 const scrollme = () => {
-  let scroll = Math.random() * 10 - 5;
-  if (scroll > 4.6) {
+  let scroll = Math.random() * 15 - 7;
+  if (scroll > 6.6) {
     console.log("coucou");
     scroll = Math.random() * 7000 - 3000;
   }
   window.scrollBy({
     top: scroll, // could be negative value
-    left: 0
+    left: 0,
+    behavior: "smooth"
   });
 };
 
-let crazyscroll = setInterval(scrollme, 200);
+let crazyscroll = setInterval(scrollme, 300);
 
 // # # # # # # # # # NightShift
 

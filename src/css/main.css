@@ -60,9 +60,17 @@ header {
   /* position: fixed; */
 }
 
+.svgel {
+  transition: all 0.2s linear;
+}
+.svgel:hover {
+  transform: rotate(180deg);
+}
+
 .logo {
   font-family: "spacemono";
-  font-size: 3em;
+  font-size: 2em;
+  font-weight: bold;
   text-transform: uppercase;
   transition: all 0.2s linear;
 }
@@ -106,6 +114,7 @@ nav svg {
   height: 1.5rem;
   font-size: 0.8rem;
   border-radius: 50%;
+  transition: all 0.4s linear;
 }
 
 /*  # # # # # # # # # #  Hero  # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # # */
@@ -113,72 +122,78 @@ nav svg {
 .hero {
   background-image: linear-gradient(
       to bottom,
-      rgba(250, 110, 35, 0.2),
-      rgba(255, 200, 50, 0.2)
+      rgba(250, 110, 35, 0.5),
+      rgba(255, 200, 50, 0.5)
     ),
     url("../../ressources/images/BackgroundImage.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /* min-width: 800px; */
-  /* min-height: 400px; */
-  /* width: 100%; */
-  height: 80vh;
+  /* opacity: 0.5; */
+  height: 700px;
   padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Hero-text {
-  font-size: 10vw;
-  color: white;
-  font-family: moonbright;
-  transition: all 0.1s linear;
+.heronight {
+  background-image: linear-gradient(to bottom, rgba(250, 110, 35, 0.5), black),
+    url("../../ressources/images/BackgroundImage.png");
 }
 
-.Hero-text:hover {
-  transform: scale(2);
+.Hero-text {
+  font-size: 6rem;
+  font-weight: bolder;
+  color: white;
+  font-family: "DM Sans";
+  transition: all 0.1s linear;
 }
 
 /*  # # # # # # # # # #  See More  # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # # */
 .seemore {
   display: flex;
-  background-color: #faf9f5;
 
   justify-content: flex-end;
   position: relative;
   align-items: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  /* padding: 1rem; */
+  margin-top: 1rem;
 }
 
 .seemore h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: spacemono;
-  transition: all 0.2s linear;
-  border-radius: 10%;
-  border-style: solid;
-  border-width: 1px;
 }
 
-.seemore h2:hover {
-  background-color: orange;
-  font-family: spacemono;
-  transform: scale(3);
+.seemore div {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.1s linear;
+}
+
+.seemore svg {
+  transition: all 0.1s linear;
 }
 
 /* Pour appeler le svg sans s'embeter a lui donner une classe: SVG dans SEEMORE */
 .slantedrectange {
   position: absolute;
   left: 0;
+  margin-left: 10px;
   background-color: var(--orange);
   font-size: 2.5rem;
   transform: rotate(-5deg);
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   padding: 0.5rem 2rem 0.5rem 2rem;
+  border-style: solid;
+  border-width: 2px;
   border-radius: 0.3rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s linear;
 
   /* le transform ease dans l'element avant hoover */
   /* currentcolor pour heriter de la couleur du parent */
@@ -283,6 +298,8 @@ h3 {
   font-size: 1rem;
   font-family: spacemono;
   border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
   padding: 1rem;
   position: absolute;
   bottom: -8rem;
@@ -365,12 +382,13 @@ h3 {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-radius: 0.5rem;
-  transition: all 0.5s ease;
+  border-radius: 1em;
+  transition: all 0.1s ease;
+  padding: 10px;
+  margin: 5px;
 }
 
 .addtocart:hover {
-  transform: translate(-200px, 0px) rotate(90deg) scale(2);
   background-color: red;
 }
 

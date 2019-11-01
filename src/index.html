@@ -20,14 +20,11 @@
 
     <span id="windowSize"></span>
 
-    <!-- # # # # # # # # Header # # # # # # # # # # # # # # # # # # # # # # # #  -->
-
-
-  
+    <!-- # # # # # # # # Header # # # # # # # # # # # # # # # # # # # # # # # #  -->  
 
     <header>
       <h1 class="logo">brightlightz</h1>
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>
+      <svg class="svgel" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>
 
       <nav>
         <ul class="menu">
@@ -49,9 +46,12 @@
 
     <!-- # # # # # # # # Hero # # # # # # # # # # # # # # # # # # # # # # # #  -->
 
-    <section class="hero">
-      <h1 class="Hero-text">Eye Wear blah blah</h1>
-    </section>
+<div class="hero">
+    <!-- <section class="hero"> -->
+      <h1 class="Hero-text">Eye Wear for every side of you</h1>
+    <!-- </section> -->
+</div>
+
 
     <!-- # # # # # # # # Hero # # # # # # # # # # # # # # # # # # # # # # # #  -->
 
@@ -61,8 +61,10 @@
 
    <section class="seemore">
       <h1 id = "Collections"class="slantedrectange" >Collection</h1>
-      <h2 >See More</h2>
-      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+      <div>
+        <h2 >See More</h2>
+      </div>
+      <svg  xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
     </section>
 
     <!-- # # # # # # # # Collections # # # # # # # # # # # # # # # # # # # # # # # #  -->
@@ -100,6 +102,9 @@
      
     </section>
 
+    <!-- # # # # # # # # Pastille # # # # # # # # # # # # # # # # # # # # # # # #  -->
+
+
     <div class="pastilleanchor" >
       <p class="pastille">Spring Summer Collection</p>
 
@@ -119,7 +124,7 @@
             <p>allen</p>
             <p>98$</p>
             <p>color</p>
-            <p class=addtocart >Add to cart</p>
+            <div class="addtocart"> <span>Add to cart</span></div>
           </div>        
           <div class="imagelunettecontenair"><img  src="../ressources/images/lunette1.png" /></div>
         </div>
@@ -128,7 +133,7 @@
             <p>allen</p>
             <p>98$</p>
             <p>color</p>
-            <p class=addtocart >Add to cart</p>
+            <div class="addtocart"> <span>Add to cart</span></div>
           </div>        
           <div class="imagelunettecontenair"><img  src="../ressources/images/lunette2.jpg" /></div>
         </div>
@@ -137,7 +142,7 @@
             <p>allen</p>
             <p>98$</p>
             <p>color</p>
-            <p class=addtocart >Add to cart</p>
+            <div class="addtocart"> <span>Add to cart</span></div>
           </div>        
           <div class="imagelunettecontenair"><img  src="../ressources/images/lunette3.jpg" /></div>
         </div>
@@ -146,7 +151,7 @@
             <p>allen</p>
             <p>98$</p>
             <p>color</p>
-            <p class=addtocart >Add to cart</p>
+            <div class="addtocart"> <span>Add to cart</span></div>
           </div>        
           <div class="imagelunettecontenair"><img  src="../ressources/images/lunette4.jpg" /></div>
         </div>
@@ -157,6 +162,10 @@
 
 </section>
 
+    <script src="https://code.jquery.com/jquery-2.1.0.js"> </script>
     <script src="./js/main.js"></script>
+  
+
   </body>
 </html>
+

@@ -29,30 +29,58 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 1rem;
+  background-color: #faf9f5;
+}
+
+#windowSize {
+  background-color: red;
+  z-index: 999;
+  position: fixed;
+
+  left: 50%;
+  bottom: 0;
+  padding: 5px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /*  # # # # # # # # # #  Menu  # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # # */
 header {
   display: flex;
+  position: fixed;
+  z-index: 2;
   /* height: 70px;  on laisse la taille s'adapter aux objets*/
   align-items: center;
   justify-content: space-between;
   background-color: #faf9f5;
   padding: 0.5rem 0.5rem;
   overflow: scroll;
+  width: 100vw;
   /* position: fixed; */
 }
 
 .logo {
-  font-family: "VT323", monospace;
+  font-family: "spacemono";
   font-size: 3em;
   text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+.logo:hover {
+  transform: scale(1.3);
+  /* font-size: 5em; */
 }
 
 nav {
   display: flex;
   align-items: center;
 }
+
+/* pour ne pas display le menu special petit format */
+nav svg {
+  display: none;
+}
+
 .menu {
   display: flex;
 }
@@ -85,10 +113,10 @@ nav {
 .hero {
   background-image: linear-gradient(
       to bottom,
-      rgba(250, 110, 35, 0.5),
-      rgba(255, 200, 50, 0.5)
+      rgba(250, 110, 35, 0.2),
+      rgba(255, 200, 50, 0.2)
     ),
-    url("../../ressources/images/img1.jpg");
+    url("../../ressources/images/BackgroundImage.png");
   background-size: cover;
   background-repeat: no-repeat;
   /* min-width: 800px; */
@@ -103,21 +131,40 @@ nav {
 
 .Hero-text {
   font-size: 10vw;
-  color: var(--yellow);
+  color: white;
   font-family: moonbright;
+  transition: all 0.1s linear;
+}
+
+.Hero-text:hover {
+  transform: scale(2);
 }
 
 /*  # # # # # # # # # #  See More  # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # # */
-/* attention j'utilise seemore class pour le conteneur et pour un des contenus */
 .seemore {
   display: flex;
+  background-color: #faf9f5;
+
   justify-content: flex-end;
   position: relative;
   align-items: center;
-  margin: 1rem;
-  font-size: 1.5rem;
-  font-family: spacemono;
+  padding: 1rem;
   margin-top: 2rem;
+}
+
+.seemore h2 {
+  font-size: 2rem;
+  font-family: spacemono;
+  transition: all 0.2s linear;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.seemore h2:hover {
+  background-color: orange;
+  font-family: spacemono;
+  transform: scale(3);
 }
 
 /* Pour appeler le svg sans s'embeter a lui donner une classe: SVG dans SEEMORE */
@@ -137,13 +184,14 @@ nav {
   /* currentcolor pour heriter de la couleur du parent */
 }
 .slantedrectange:hover {
-  transform: skewY(60deg);
+  transform: rotate(180deg) scale(2);
 }
 
 /*  # # # # # # # # # #  Collections  # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # # */
 
 /* tout le bloc */
 .collections {
+  background-color: #faf9f5;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -151,7 +199,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   /* height: 850px; */
-  margin: 20px;
+  /* margin: 10px; */
 }
 
 /* sur les browser qui ont le kit */
@@ -161,16 +209,11 @@ nav {
 /* un sous bloc personne */
 
 .collection_item {
-  /* flex:0 1 auto propriete par defaut */
-  /* flex-shrink: 0; */
-  /* flex dshrink pour casser la contrainte de taille pour queelle prenne sa propre taille */
-  /* flex:none:  meme chose que flex 0 0 auto. l'image fille reprend sa taille initiale*/
   flex: none;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin: 20px;
 }
 
@@ -179,28 +222,28 @@ nav {
   /* NOTE 100% d'une image est le pourcentage par rapport a sa taille a elle meme: */
   /* il faut la considerer comme un conteneur d'elle meme */
   max-width: 100%;
+  /* on laisse maxwitth 100% pour une image comme securite qu elle ira pas au dela */
   width: 600px;
-  max-height: 700px;
-  /* max-height: 500px; */
+  max-height: 450px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  /* transition: transform 0.5s ease; */
+  transition: all 0.2s linear;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5%;
 }
 
 .imgfront {
   position: absolute;
   top: 0px;
-  /* transition: transform 0.5s ease; */
-  transition: opacity 0.5s linear;
   cursor: pointer;
   opacity: 1;
-}
-
-.imgback {
-  transition: opacity 0.5s linear;
+  z-index: 4;
 }
 
 .collection_item img:hover {
   opacity: 0.4;
+  transform: rotate(90deg);
 }
 
 h2 {
@@ -244,21 +287,19 @@ h3 {
   position: absolute;
   bottom: -8rem;
   right: 2.5rem;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 .pastille:hover {
-  transform: rotate(1070deg);
+  transform: rotate(1070deg) scale(0.5);
   /* transform: scale(2); */
 }
 
 /*  # # # # # # # # # #  SUnglasses   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  */
 
 .sectionsunglassesbox {
-  /* background-color: var(--yellow); */
   padding-top: 50px;
   padding-bottom: 50px;
   background-image: url("../../ressources/images/Background.png");
-  /* padding-left: 10px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,47 +312,66 @@ h3 {
 
 .sunglasses {
   display: flex;
-  margin: 100px;
+  margin: 50px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .block-sunglasses {
-  background-color: #efefef;
+  /* background-color: #efefef; */
+  position: relative;
+  flex: 1 1 500px;
+  margin: 0.3em;
+  /* border-radius: 50%; */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 20px 0px 20px 0px;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
-.block-sunglasses img {
-  width: 660px;
-  transition: transform 0.5s ease;
+.imagelunettecontenair {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
 }
+.block-sunglasses img {
+  transition: all 0.5s ease;
+  border-width: 1px;
+}
+
 .block-sunglasses img:hover {
-  transform: rotate(470deg);
-  /* scale(1.2); */
+  transform: rotate(800deg) scale(10);
+  opacity: 0;
 }
 
 .menu-sunglass {
   display: flex;
-  padding: 30px;
-  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+  justify-content: center;
   align-items: center;
-  position: relative;
+  top: 0;
+}
+.menu-sunglass p {
+  padding: 10px;
+  font-family: monospace;
 }
 
 .addtocart {
   font-family: spacemono;
+  background-color: white;
   border-style: solid;
   border-width: 2px;
   border-radius: 0.5rem;
-  padding: 1rem;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .addtocart:hover {
-  transform: translate(-100px, -200px);
+  transform: translate(-200px, 0px) rotate(90deg) scale(2);
+  background-color: red;
 }
 
 .browsebox {
@@ -321,4 +381,61 @@ h3 {
   background-color: white;
   padding: 1rem;
   font-family: spacemono;
+}
+
+/*  # # # # # # # # # #  Responsivity   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  */
+
+@media (max-width: 850px) {
+  .cart-item {
+    display: none;
+  }
+
+  nav svg {
+    display: inline;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .collection_item img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .slantedrectange {
+    position: absolute;
+    left: 0;
+    background-color: var(--orange);
+    font-size: 1.5rem;
+    transform: rotate(-5deg);
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 0.3rem;
+    transition: transform 0.3s ease;
+  }
+
+  .pastille {
+    display: flex;
+    font-weight: bold;
+
+    align-items: center;
+    text-align: center;
+    background-color: var(--orange);
+    width: 7rem;
+    height: 7rem;
+    font-size: 0.5rem;
+    font-family: spacemono;
+    border-radius: 50%;
+    padding: 1rem;
+    position: absolute;
+    bottom: -8rem;
+    right: 2.5rem;
+    transition: transform 0.5s ease;
+  }
+
+  .seemore h2 {
+    display: none;
+  }
 }

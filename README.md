@@ -1,4 +1,11 @@
-# parcel-postcss
+## Description
+
+This is a simple demo website made with pure html/css and a little bit of js for animation.
+I think I went a little bit too far with the animations ... but hey it was just for fun!
+
+![](demo/demo.gif)
+
+[Check it live](https://crazy-brightlight.netlify.com/)
 
 ## Usage
 
